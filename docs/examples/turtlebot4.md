@@ -1,4 +1,8 @@
----
+# turtlebot4
+
+Example ROBOT.md manifest. The frontmatter below is the machine-readable declaration; the prose after it is the human/LLM-readable description.
+
+```yaml
 rcan_version: "3.0"
 metadata:
   robot_name: turtlebot4
@@ -52,9 +56,7 @@ network:
   port: 8002
   signing_alg: pqc-hybrid-v1
   transports: [http]
----
-
-# turtlebot4
+```
 
 ## Identity
 

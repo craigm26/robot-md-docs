@@ -1,4 +1,8 @@
----
+# minimal
+
+Example ROBOT.md manifest. The frontmatter below is the machine-readable declaration; the prose after it is the human/LLM-readable description.
+
+```yaml
 rcan_version: "3.0"
 metadata:
   robot_name: minimal
@@ -12,9 +16,7 @@ safety:
   estop:
     software: true
     response_ms: 200
----
-
-# minimal
+```
 
 ## Identity
 

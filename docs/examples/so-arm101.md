@@ -1,4 +1,8 @@
----
+# so-arm101
+
+Example ROBOT.md manifest. The frontmatter below is the machine-readable declaration; the prose after it is the human/LLM-readable description.
+
+```yaml
 rcan_version: "3.0"
 metadata:
   robot_name: so-arm101
@@ -59,9 +63,7 @@ safety:
   hitl_gates:
     - scope: destructive
       require_auth: true
----
-
-# so-arm101
+```
 
 ## Identity
 

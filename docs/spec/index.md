@@ -1,10 +1,5 @@
 # ROBOT.md Format Specification
 
-**Status:** Draft (v0.1)  
-**Date:** 2026-04-17  
-**Authors:** craigm26 et al.  
-**License:** Apache-2.0
-
 `ROBOT.md` is a single file that declares what a robot **is** and what it **can do**, in a form that both machines (JSON Schema + RCAN validators) and LLM planners can consume directly.
 
 The file is markdown with a leading YAML frontmatter block:

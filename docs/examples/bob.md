@@ -1,4 +1,8 @@
----
+# bob
+
+Example ROBOT.md manifest. The frontmatter below is the machine-readable declaration; the prose after it is the human/LLM-readable description.
+
+```yaml
 rcan_version: "3.0"
 schema: https://robotmd.dev/schema/v1/robot.schema.json
 
@@ -103,9 +107,7 @@ compliance:
     level: 5
   eu_ai_act:
     audit_retention_days: 3650
----
-
-# bob
+```
 
 ## Identity
 
