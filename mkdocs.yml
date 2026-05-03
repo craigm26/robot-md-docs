@@ -78,6 +78,8 @@ markdown_extensions:
 
 nav:
   - Home: index.md
+  - Getting Started:
+    - Claude Code: getting-started/claude-code.md
   - Spec:
     - Overview: spec/index.md
     - v1 (current): spec/v1.md
@@ -91,3 +93,6 @@ nav:
     - minimal: examples/minimal.md
     - so-arm101: examples/so-arm101.md
     - turtlebot4: examples/turtlebot4.md
+  - Reference:
+    - MCP Server Options: reference/mcp-server-options.md
+    - PyPI Publish: reference/pypi-publish.md
