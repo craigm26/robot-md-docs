@@ -78,5 +78,8 @@ markdown_extensions:
 
 nav:
   - Home: index.md
-
-# Per-site nav added during migration phases.
+  - Spec:
+    - Overview: spec/index.md
+    - v1 (current): spec/v1.md
+    - v0.2 design: spec/v0.2-design.md
+    - v0.1 MCP design: spec/v0.1-mcp-design.md
