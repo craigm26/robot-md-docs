@@ -83,3 +83,5 @@ nav:
     - v1 (current): spec/v1.md
     - v0.2 design: spec/v0.2-design.md
     - v0.1 MCP design: spec/v0.1-mcp-design.md
+  - MCP: mcp/index.md
+  - Compliance: compliance/index.md
