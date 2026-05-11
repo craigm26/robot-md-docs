@@ -1,0 +1,27 @@
+name: token-drift
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  schedule:
+    - cron: '0 6 * * *'  # daily 06:00 UTC
+
+permissions:
+  contents: read
+
+jobs:
+  drift:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch apex tokens.css
+        run: |
+          curl -fsS -H 'User-Agent: robot-md-docs/token-drift' https://robotmd.dev/css/tokens.css -o /tmp/apex-tokens.css
+      - name: Diff against committed mirror
+        run: |
+          if ! diff -u docs/stylesheets/tokens.css /tmp/apex-tokens.css; then
+            echo "::error::tokens drift detected — run scripts/sync-tokens.sh and recommit."
+            exit 1
+          fi
+          echo "tokens are in sync."
