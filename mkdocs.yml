@@ -43,7 +43,9 @@ theme:
     - toc.follow
 
 extra_css:
-  - stylesheets/extra.css
+  # Bumped on token-rebinding changes so existing visitors re-fetch
+  # instead of waiting up to 4 h for the Cache-Control TTL to expire.
+  - stylesheets/extra.css?v=2026-05-11b
 
 plugins:
   - search
