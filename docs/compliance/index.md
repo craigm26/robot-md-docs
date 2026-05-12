@@ -129,5 +129,5 @@ For RCAN compatibility requirements, see [rcan.dev/compatibility](https://rcan.d
 ## Next steps
 
 - [Register your robot →](https://robotmd.dev/registry/)
-- [Let Compliance-bot file for you →](https://robotmd.dev/managed-agents/)
+- [Let Compliance-bot file for you →](https://robotmd.dev/agents/#managed)
 - [RRF live endpoints →](https://robotregistryfoundation.org)

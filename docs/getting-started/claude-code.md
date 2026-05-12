@@ -39,7 +39,7 @@ have resources pointing at the file.
 
 **Step 3.** Claude will, in order:
 
-1. Run `pip install robot-md` (or `pipx install` — whichever your environment prefers).
+1. Run `pipx install robot-md` (falls back to `pip install robot-md` if pipx isn't available).
 2. Run `robot-md init my-bob --preset so-arm101 --register --manufacturer acme --contact-email me@acme.com`.
 3. Read back the resulting `ROBOT.md` to confirm the manifest is self-consistent.
 4. Print the assigned `RRN-NNNNNNNNNNNN` and its `https://rcan.dev/r/<rrn>` resolver URL.
@@ -68,8 +68,8 @@ You: Set up a ROBOT.md for this robot. Use the so-arm101 preset.
 Claude: I'll do this in four steps — install the CLI, init the
         manifest with registration, wire up MCP, then verify.
 
-        [runs: pip install robot-md]
-        ✓ robot-md 0.6.3 installed
+        [runs: pipx install robot-md]
+        ✓ robot-md 1.10.4 installed
 
         [runs: robot-md init my-bob --preset so-arm101 --register \
                --manufacturer acme --contact-email me@acme.com]
@@ -167,7 +167,7 @@ Manifest-only; no prompts, no MCP or skill install, no hardware touched. Identic
 
 Claude Code honors your permission mode. In the default *accept edits* mode, it will:
 
-- ✅ Run `pip install robot-md`, `npx robot-md-mcp`, `claude mcp add` — installation + wiring.
+- ✅ Run `pipx install robot-md`, `npx robot-md-mcp`, `claude mcp add` — installation + wiring.
 - ✅ Run `robot-md init / register / calibrate / validate / render` — manifest lifecycle.
 - ✅ Read and edit files under your project directory.
 - ⚠ **Ask before:** destructive operations (deleting registrations, `robot-md unregister <rrn>`), writing files outside the project, publishing to external registries with non-default endpoints.
