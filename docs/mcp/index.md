@@ -4,6 +4,23 @@
 
 This MCP server exposes a robot's `ROBOT.md` as MCP resources, plus two tools: `validate` (check a manifest against the schema) and `render` (produce a human- or agent-readable view). Read-only. **By design, it has no actuator tools.** Anything that physically moves a robot goes through `robot-md-gateway` at Layer 3. One `npx` command. Zero config files.
 
+
+## Two servers
+
+robot-md has two MCP servers. Pick by whether the agent should be able to move the robot.
+
+| | `robot-md-mcp` (npm, this page) | `robot-md mcp` (the robot-md CLI, PyPI) |
+|---|---|---|
+| What it exposes | The manifest as resources, plus `validate` and `render` | Manifest reads, read-only perception (`vision_find`), and motion tools (`execute_task`, `execute_capability`, `estop`) |
+| Motion | None | Sent only to `robot-md-gateway`, which checks every step; refused with no gateway, and refused under a gate that needs a person |
+| Needs | Node 18.20+ | Python, robot-md 2.0.1 or newer |
+| Add to Claude Code | `claude mcp add robot-md -- npx -y robot-md-mcp ./ROBOT.md` | `claude mcp add robot-md -- robot-md mcp`, run from the folder with the `ROBOT.md` |
+
+Use robot-md 2.0.1 or newer for the CLI server. Earlier versions move the arm from inside the server (1.x) or send a motion gated on a scope such as `destructive` or `system` anyway (2.0.0). Install it with `python3 -m pip install --user 'robot-md[hardware]>=2.0.1'`.
+
+The Claude Code plugin from the Robot Registry Foundation's marketplace starts the CLI server for you and refuses an older robot-md: `/plugin marketplace add RobotRegistryFoundation/claude-code-plugins`, then `/plugin install robot-md@robotregistryfoundation`. The plugin listed in the Claude plugin directory has the same skills without a server; its `/robot-md:connect-server` command points here.
+
+The rest of this page is about `robot-md-mcp`.
 ---
 
 ## § 01 — Install
